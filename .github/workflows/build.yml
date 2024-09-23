@@ -123,3 +123,7 @@ jobs:
             eval "$bk"
           fi
           eval "$shell"
+
+      - name: dmesg
+        run: |
+          sudo dmesg
