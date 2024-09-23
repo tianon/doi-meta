@@ -125,6 +125,7 @@ jobs:
             bk="$(../.doi/.bin/bashbrew-buildkit-env-setup.sh)"
             bk="$(jq <<<"$bk" -r 'to_entries | map(.key + "=" + .value | @sh) | "export " + join(" ")')"
             eval "$bk"
+            export BASHBREW_BUILDKIT_SBOM_GENERATOR='docker/scout-sbom-indexer:latest'
           fi
           eval "$shell"
 
