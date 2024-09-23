@@ -45,6 +45,10 @@ jobs:
         with:
           submodules: true
 
+      - name: Absolutely No Snappy
+        run: |
+          sudo apt-get purge -y --auto-remove '.*snap.*'
+
       # TODO on Linux, install Tianon's Docker builds (switch off "ubuntu-latest" to pin to something closer to something we publish Debian builds for OR just run Docker-in-Docker and use GITHUB_ENV to set DOCKER_HOST to a suitable value)
       - uses: tianon/debian-moby-action@HEAD
 
